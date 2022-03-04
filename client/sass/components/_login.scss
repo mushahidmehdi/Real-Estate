@@ -1,0 +1,53 @@
+@use "../abstracts" as abs;
+
+.login {
+  @include abs.center;
+  margin-top: 20rem;
+  &__container {
+    height: 30rem;
+    padding: 2rem 0.9rem;
+    background-color: abs.$primary-white;
+    border-radius: 4px;
+    > h1 {
+      font-size: 2.4rem;
+      padding: 0.8rem;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0.5rem;
+      > span {
+        font-family: abs.$font-sans;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+      > input {
+        font-family: abs.$font-sans;
+        font-weight: 500;
+        font-size: 1.4rem;
+        padding: 1rem 2.5rem;
+        border-style: none;
+        border-radius: 0.4rem;
+      }
+      > input:focus {
+        outline: none;
+      }
+
+      > button {
+        border-radius: 0.4rem;
+        padding: 0.8rem 2.8rem;
+        border-style: none;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: abs.$primary-white;
+        background: abs.$secondary-blue;
+        font-family: abs.$font-sans;
+      }
+    }
+    > p {
+      font-size: 1.4rem;
+      margin: 0.6rem 1.7rem;
+    }
+  }
+}

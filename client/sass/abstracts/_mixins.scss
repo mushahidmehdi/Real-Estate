@@ -1,0 +1,27 @@
+@mixin container {
+  max-width: 144.1rem;
+  padding: 0 8rem;
+  margin: 0 auto;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin respond($bp) {
+  @if $bp == phone {
+    @media only screen and (min-width: 31.5625em) {
+      @content;
+    }
+  } @else if $bp== tablet {
+    @media only screen and (min-width: 85.375em) {
+      @content;
+    }
+  } @else if $bp == desktop {
+    @media only screen and (min-width: 120em) {
+      @content;
+    }
+  }
+}

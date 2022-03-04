@@ -1,0 +1,49 @@
+@use "../abstracts" as abs;
+
+.dropdown {
+  &_btn {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    width: 262px;
+    background-color: abs.$secondary-white;
+    > span {
+      padding: 0 0 0 1rem;
+      font-family: abs.$font-sans;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 27px;
+      letter-spacing: 0px;
+    }
+  }
+
+  &_content {
+    background: abs.$secondary-white;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+      rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  }
+
+  &_items {
+    position: relative;
+    padding: 0 0 0 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 32px;
+    width: 253px;
+    font-family: abs.$font-sans;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    &:hover {
+      box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+        rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    }
+  }
+}

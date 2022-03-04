@@ -1,0 +1,65 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include mix.container;
+  font-family: var.$font-merri;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var.$font-merri;
+}
+
+p {
+  font-family: var.$font-sans;
+}
+
+.slide_alert {
+  -webkit-animation: slide-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-tr {
+  0% {
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100px) translateX(100px);
+    transform: translateY(-100px) translateX(100px);
+  }
+}
+@keyframes slide-tr {
+  0% {
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100px) translateX(100px);
+    transform: translateY(-100px) translateX(100px);
+  }
+}

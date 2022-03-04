@@ -1,0 +1,72 @@
+@use "../abstracts" as var;
+
+.main__container {
+  @include var.center;
+  @include var.container;
+}
+
+.main__body {
+  padding: 12rem 4rem;
+  flex: 3;
+
+  > h1 {
+    font-family: var.$font-merri;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 8.6rem;
+    letter-spacing: 0px;
+  }
+  > p {
+    font-family: var.$font-sans;
+    font-size: 2.1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.4rem;
+    letter-spacing: 0px;
+  }
+}
+.main__body-search {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 104px;
+  width: 516px;
+  border-radius: 4px;
+  background: var.$primary-white;
+  margin: 4rem 0 0 0;
+
+  > input {
+    font-family: var.$font-sans;
+    font-weight: 400;
+    font-size: 1.7rem;
+    padding: 1.7rem 2.5rem;
+    width: 260px;
+    border-style: none;
+  }
+  > input:focus {
+    outline: none;
+  }
+}
+
+.main__body-search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 0.4rem;
+  padding: 1.49rem 2.5rem;
+  color: var.$primary-white;
+  background: var.$secondary-blue;
+  font-family: var.$font-sans;
+}
+
+.main__body-search-btn > button {
+  border-style: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var.$primary-white;
+  background: var.$secondary-blue;
+  font-family: var.$font-sans;
+  margin-inline-start: 1rem;
+}

@@ -1,0 +1,32 @@
+@use "../abstracts" as abs;
+
+.detail {
+  > h1 {
+    height: 128px;
+    width: 1115px;
+    font-family: abs.$font-merri;
+    font-size: 5.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 6.9rem;
+    letter-spacing: 0px;
+    color: #141b2d;
+    margin: 8rem 0 3.6rem;
+  }
+
+  &__container {
+    @include abs.center;
+    justify-content: space-between;
+  }
+
+  &__left_image {
+    box-shadow: 0px 4px 20px 0px #4764c31a;
+    height: 363px;
+    width: 735px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__left_image-carousal {
+  }
+}

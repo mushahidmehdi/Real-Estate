@@ -1,0 +1,24 @@
+@use "../abstracts" as abs;
+
+.footer {
+  margin-top: 15rem;
+  position: relative;
+  overflow: hidden;
+  &__image-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    > Image {
+      background: abs.$secondary-white;
+    }
+
+    > h3 {
+      color: abs.$secondary-white;
+      font-size: 1.7rem;
+      margin-left: -4.9rem;
+    }
+  }
+}

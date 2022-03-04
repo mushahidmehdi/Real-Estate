@@ -1,0 +1,57 @@
+@use "../abstracts" as var;
+
+.header__container {
+  display: flex;
+  height: 4.9rem;
+  margin: 4rem;
+  align-items: center;
+}
+
+.header__logo {
+  width: 6.284210205078125rem;
+  color: var.$primary-blue;
+  flex: 1;
+}
+
+.header__navbar {
+  flex: 6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var.$font-sans;
+}
+
+.header__logo-image {
+  width: 6.484rem;
+}
+
+.header__navbar-nav {
+  display: flex;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  color: #141b2d;
+}
+
+.header__navbar-nav li {
+  margin-inline-end: 2.4rem;
+  color: #141b2d;
+}
+
+.header__navbar-btn {
+  border-radius: 0.4rem;
+  padding: 1.1rem 2.5rem;
+
+  border-style: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  font-style: normal;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  color: var.$primary-white;
+  background: var.$secondary-blue;
+  font-family: var.$font-sans;
+}

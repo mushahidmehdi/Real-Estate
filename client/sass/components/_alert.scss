@@ -1,0 +1,29 @@
+@use "../abstracts" as abs;
+
+.alert {
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  background-color: abs.$primary-white;
+  padding: 2rem;
+  border-radius: 0.4rem;
+
+  &__success {
+    display: flex;
+    align-items: center;
+    color: forestgreen;
+    > span {
+      margin-inline-end: 0.9rem;
+    }
+  }
+
+  &__error {
+    display: flex;
+    align-items: center;
+    color: red;
+    > span {
+      margin-inline-end: 0.9rem;
+    }
+  }
+}
