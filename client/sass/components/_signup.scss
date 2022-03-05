@@ -5,9 +5,13 @@
   margin-top: 10rem;
   &__container {
     height: 50rem;
-    padding: 2rem 0.9rem;
+    font-size: 3rem;
+    padding: 2.3rem 1.3rem;
     background-color: abs.$primary-white;
     border-radius: 4px;
+    width: 34rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     > h1 {
       font-size: 2.4rem;
       padding: 0.8rem;

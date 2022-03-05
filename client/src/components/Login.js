@@ -1,10 +1,13 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { login } from "../state/actions";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector((state) => state.auth);
   const [loginAccount, setLoginAccount] = useState({
     email: "",
     password: "",
@@ -20,10 +23,16 @@ const Login = () => {
     dispatch(login(email, password));
   };
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      return router.push("/");
+    }
+  }, [isAuthenticated]);
+
   return (
     <div className="login">
       <div className="login__container">
-        <h1>Login into your Account</h1>
+        <h1>Login</h1>
         <form onSubmit={submit}>
           <div className="login__container__item">
             <span>Email Address</span>

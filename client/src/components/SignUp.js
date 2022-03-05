@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { signup, setAlert } from "../state/actions";
+import Alert from "./Alert";
 
 const SignUp = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state);
+  const { isLoading, isAuthenticated } = useSelector((state) => state.auth);
   const [signUp, setSignUp] = useState({
     name: "",
     email: "",
@@ -21,16 +24,23 @@ const SignUp = () => {
   const submit = (e) => {
     e.preventDefault();
     if (password !== confirm_password) {
-      setAlert("error", "Password Not match");
+      dispatch(setAlert("error", "Password do not match"));
     } else {
       dispatch(signup(name, email, password, confirm_password));
     }
   };
 
+  useEffect(() => {
+    if (isAuthenticated || isLoading) {
+      return router.push("/");
+    }
+  }, [isAuthenticated]);
+
   return (
     <div className="signup">
       <div className="signup__container">
-        <h1>Register a New Account</h1>
+        <Alert />
+        <h1>Register a new account</h1>
         <form onSubmit={submit}>
           <div className="signup__container__item">
             <span>Full Name</span>
@@ -93,6 +103,7 @@ const SignUp = () => {
           </span>
         </p>
       </div>
+      <Alert />
     </div>
   );
 };

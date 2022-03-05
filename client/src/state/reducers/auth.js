@@ -16,7 +16,6 @@ const initialState = {
 
 export const authReducer = (state = initialState, action) => {
   const { type, payload } = action;
-
   switch (type) {
     case SIGNUP_SUCCESS:
       return {
