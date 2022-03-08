@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { login } from "../state/actions";
@@ -23,11 +23,9 @@ const Login = () => {
     dispatch(login(email, password));
   };
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      return router.push("/");
-    }
-  }, [isAuthenticated]);
+  if (isAuthenticated) {
+    router.push("/");
+  }
 
   return (
     <div className="login">

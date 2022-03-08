@@ -26,6 +26,7 @@
     letter-spacing: 0px;
   }
 }
+
 .main__body-search {
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   display: flex;
@@ -48,9 +49,8 @@
   > input:focus {
     outline: none;
   }
-}
 
-.main__body-search-btn {
+  &-btn {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -59,14 +59,14 @@
   color: var.$primary-white;
   background: var.$secondary-blue;
   font-family: var.$font-sans;
-}
-
-.main__body-search-btn > button {
-  border-style: none;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var.$primary-white;
-  background: var.$secondary-blue;
-  font-family: var.$font-sans;
-  margin-inline-start: 1rem;
+  > button {
+    border-style: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var.$primary-white;
+    background: var.$secondary-blue;
+    font-family: var.$font-sans;
+    margin-inline-start: 1rem;
+    }
+  } 
 }

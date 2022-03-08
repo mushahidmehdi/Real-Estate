@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { ChevronDown, ChevronUp } from "react-feather";
 
-const Dropdown = ({ dropdown, setDropdown, toggleItems, data, title }) => {
+const Dropdown = ({ toggleItems, data, title }) => {
+  const [dropdown, setDropdown] = useState(false);
+
   return (
     <section className="dropdown">
       <div className="dropdown_btn" onClick={() => setDropdown(!dropdown)}>
@@ -17,7 +19,7 @@ const Dropdown = ({ dropdown, setDropdown, toggleItems, data, title }) => {
         {dropdown &&
           data.map((item, index) => (
             <ul key={index}>
-              <li className="dropdown_items" onClick={() => toggleItems(item)}>
+              <li className="dropdown_items" onClick={() => [toggleItems(item), setDropdown(!dropdown)]}>
                 {item}
               </li>
             </ul>

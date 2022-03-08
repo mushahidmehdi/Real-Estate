@@ -1,9 +1,39 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Header from "../src/components/Header";
 import Carousel from "../src/components/Carousel";
+import axios from "axios";
+import { useRouter } from "next/router";
 
-const Detail = () => {
+const Detail = ( { data } ) => {
+  const router = useRouter();
+  const images = []
+  
+  for (let i = 1 ; i <= 20 ; i++){
+    const image = `photo_${i}`
+    if (image !== null){
+
+    }
+  }
+  
+  console.log(data)
+
+  // console.log(data)
+  // num.map((img, idx) => {
+  //   if (data.photo_`${idx + 1}`  !== null ) {
+  //     images.push(data.photo_`${idx + 1}`)
+  //   }
+  // })
+
+  // useEffect(() => {
+    
+  //   const fechDetailPost = () => {
+  //     isLoading(!loading);
+     
+  //   };
+  //   fechDetailPost();
+  // }, []);
+ 
   return (
     <>
       <Header />
@@ -40,3 +70,20 @@ const Detail = () => {
 };
 
 export default Detail;
+
+
+export const getServerSideProps = async (context)=> {
+ 
+  const { slug } = context.query
+    const config = {
+      headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}`,
+      },
+    };
+  const { data } = await axios.get(`http://localhost:8000/api/listings/${slug}`, config);
+  
+  return { props: {
+        data
+      } 
+    }
+}

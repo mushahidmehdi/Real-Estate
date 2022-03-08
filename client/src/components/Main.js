@@ -6,7 +6,7 @@ import RE from "../../public/assests/relax-eryaman/relax-eryamn.jpg";
 
 const Main = () => {
   return (
-    <section className="main__container">
+    <main className="main__container">
       <div className="main__body">
         <h1>Modern living for everyone</h1>
         <p>
@@ -22,7 +22,7 @@ const Main = () => {
             placeholder="Search of location"
           />
           <div className="main__body-search-btn">
-            <Search strokeWidth={1} />
+            <Search strokeWidth={1.4} />
             <button>Search</button>
           </div>
         </div>
@@ -30,7 +30,7 @@ const Main = () => {
       <div className="main__image">
         <Image src={RE} width={737.8} height={674.56} />
       </div>
-    </section>
+    </main>
   );
 };
 

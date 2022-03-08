@@ -1,44 +1,45 @@
 import React, { useState } from "react";
 
-import { Search, ChevronDown, ChevronUp } from "react-feather";
+import { Search } from "react-feather";
 import Dropdown from "./Dropdown";
 
-const dropdownList = [
-  "Something 1",
-  "Something Something 2",
-  "Lorem, ipsum",
-  "dolor sit amet consectetur",
-  "rum fugiat voluptates",
-  "ut qui labore",
-  " at repudiandae sit ipsum",
-  "Something 5",
-  "Something 6",
-  "Something 7",
-];
+const bedroomsOptions = ['Any', '1+', '3+', '5+', '8+', '15+']
+
+const sqftOptions = ['Any', '30 sq+', '60sq+', '80sq+', '100sq+', '150sq+',
+                    '250sq+', '500sq+', ]
+
+const rentPriceOption = ['Any', '₺ 400+', '₺ 600+', '₺ 800+', '₺ 1000+',
+                      '₺ 1500+','₺ 2000+', '₺ 5000+']
+
+const listDateOptions = ['Any', '1 veya az', '2 veya az', '7 veya az',
+                        '14 veya az', '20 veya az', '30 veya az' ]
 
 const Filter = () => {
-  const [dropdown, setDropdown] = useState(false);
-  const [seleted, setSeleted] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [listedDated, setListedDated] = useState("");
+  const [bedrooms, setBedrooms] = useState("");
+  const [sqft, setSqft] = useState("");
+  const [rentPrice, setRentPrice] = useState("")
 
-  const toggleItems = (item) => {
-    setSeleted(item);
-    setDropdown(!dropdown);
-  };
-
+  const handleForm = e => {
+    e.preventDefault();
+  }
+  console.log(keyword)
   return (
     <div className="filter__container">
-      <div className="filter__search">
-        <input
-          type="text"
-          name="seach"
-          id="seach"
-          placeholder="Enter a Keyword"
-        />
-        <div className="filter__search-btn">
-          <Search strokeWidth={1} />
-          <button>Search</button>
-        </div>
-      </div>
+        <form onSubmit={handleForm} className="filter__search">
+          <input
+            type="text"
+            name="keyword"
+            placeholder="Enter a Keyword"
+            value={keyword}
+            onChange={e => setKeyword(e.target.value)}
+          />
+          <div className="filter__search-btn">
+            <Search strokeWidth={1} />
+            <button type="submit"> Search </button>
+          </div>
+        </form>
 
       <p className="filter__seprator">
         <span>Filter settings</span>
@@ -46,32 +47,24 @@ const Filter = () => {
 
       <div className="filter__dropdown">
         <Dropdown
-          title="Sale or Rent"
-          data={dropdownList}
-          toggleItems={toggleItems}
-          dropdown={dropdown}
-          setDropdown={setDropdown}
+          title="Publish Date"
+          data={listDateOptions}
+          toggleItems={setListedDated}
         />
         <Dropdown
-          title="Select room flat"
-          data={dropdownList}
-          toggleItems={toggleItems}
-          dropdown={dropdown}
-          setDropdown={setDropdown}
+          title="Area in Square feet"
+          data={sqftOptions}
+          toggleItems={setSqft}
         />
         <Dropdown
-          title="Select location"
-          data={dropdownList}
-          toggleItems={toggleItems}
-          dropdown={dropdown}
-          setDropdown={setDropdown}
+          title="Number of Bedrooms"
+          data={bedroomsOptions}
+          toggleItems={setBedrooms}
         />
         <Dropdown
-          title="Most expensive"
-          data={dropdownList}
-          toggleItems={toggleItems}
-          dropdown={dropdown}
-          setDropdown={setDropdown}
+          title="Monthly Rent Price"
+          data={rentPriceOption}
+          toggleItems={setRentPrice}
         />
       </div>
     </div>

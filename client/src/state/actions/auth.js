@@ -2,12 +2,11 @@ import axios from "axios";
 import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
+  LOGOUT,
   SIGNUP_FAIL,
   SIGNUP_SUCCESS,
 } from "../TYPE";
-
 import { setAlert } from "./";
-import { redirect } from "next/dist/server/api-utils";
 
 export const login = (email, password) => async (dispatch) => {
   const config = { headers: { "Content-Type": "application/json" } };
@@ -51,6 +50,7 @@ export const signup =
       dispatch(setAlert(Object.keys(data)[0], Object.values(data)[0]));
       if (Object.keys(data)[0] !== "error") {
         window.location.replace("/login");
+        return;
       }
     } catch {
       dispatch({
@@ -59,3 +59,9 @@ export const signup =
       dispatch(setAlert("error", "Signup fail"));
     }
   };
+
+export const logout = () => (dispatch) => {
+  dispatch({
+    type: LOGOUT,
+  });
+};

@@ -3,8 +3,27 @@
 .signup {
   @include abs.center;
   margin-top: 10rem;
+  &__success {
+    background-color: abs.$primary-white;
+    border-radius: 0.4rem;
+    > h1 {
+      font-size: 2.1rem;
+      padding: 0.8rem;
+    }
+    > label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.6rem;
+      padding: 0.8rem;
+      font-family: abs.$font-sans;
+      > span {
+        margin-inline-end: 0.7rem;
+      }
+    }
+  }
   &__container {
-    height: 50rem;
+    height: 54rem;
     font-size: 3rem;
     padding: 2.3rem 1.3rem;
     background-color: abs.$primary-white;
@@ -16,12 +35,48 @@
       font-size: 2.4rem;
       padding: 0.8rem;
     }
+    > h2 {
+      font-size: 2.4rem;
+      padding: 0.8rem;
+      align-self: center;
+    }
 
     &__item {
       display: flex;
       flex-direction: column;
       padding: 1rem 0.5rem;
-      > span {
+      &-pwd {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        font-family: abs.$font-sans;
+        font-weight: 600;
+        > p {
+          margin-inline-start: 0.5rem;
+          color: rgb(251, 83, 83);
+        }
+      }
+      &-offscreen {
+        display: none;
+      }
+      &-term {
+        display: flex;
+        align-items: center;
+
+        font-family: abs.$font-sans;
+        font-size: 1.34rem;
+        font-weight: 500;
+        color: rgb(68, 68, 68);
+        padding: 0 1rem;
+        &-body {
+          margin-inline-start: 1rem;
+          > p {
+            color: rgb(32, 32, 32);
+            font-size: 1.5rem;
+          }
+        }
+      }
+      > label {
         font-family: abs.$font-sans;
         font-size: 1.6rem;
         font-weight: 500;
@@ -42,11 +97,16 @@
         border-radius: 0.4rem;
         padding: 0.8rem 2.8rem;
         border-style: none;
-        font-size: 1.4rem;
-        font-weight: 700;
+        font-size: 1.5rem;
+        font-weight: 500;
         color: abs.$primary-white;
         background: abs.$secondary-blue;
         font-family: abs.$font-sans;
+        cursor: pointer;
+        &:disabled {
+          cursor: default;
+          color: abs.$teriatery-blue;
+        }
       }
     }
     > p {
