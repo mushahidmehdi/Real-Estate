@@ -13,7 +13,7 @@ urlpatterns = [
          name='token_refresh_pair'),
     path('api/accounts/', include('accounts.api.urls')),
     path('api/realtors/', include('realtors.api.urls')),
-    path('api/listing/', include('listing.api.urls')),
+    path('api/listings/', include('listing.api.urls')),
     path('api/contacts/', include('contacts.api.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

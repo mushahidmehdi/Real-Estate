@@ -4,7 +4,7 @@ import { AlertTriangle } from "react-feather";
 import Link from "next/link";
 import { signup, setAlert } from "../state/actions";
 
-import { PWD_REGEX } from "../Constants";
+import { PWD_REGEX } from "../config";
 
 const SignUp = () => {
   const [signUpform, setSignUpform] = useState({

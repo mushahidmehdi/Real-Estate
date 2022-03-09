@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Header from "../src/components/Header";
-import Carousel from "../src/components/Carousel";
+import Header from "../components/Header";
+import Carousel from "../components/Carousel";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-const Detail = ( { data } ) => {
+const Detail = ({ data }) => {
   const router = useRouter();
-  const images = []
-  
-  for (let i = 1 ; i <= 20 ; i++){
-    const image = `photo_${i}`
-    if (image !== null){
+  const images = [];
 
+  for (let i = 1; i <= 20; i++) {
+    const image = `photo_${i}`;
+    if (image !== null) {
     }
   }
-  
-  console.log(data)
+
+  console.log(data);
 
   // console.log(data)
   // num.map((img, idx) => {
@@ -26,14 +25,14 @@ const Detail = ( { data } ) => {
   // })
 
   // useEffect(() => {
-    
+
   //   const fechDetailPost = () => {
   //     isLoading(!loading);
-     
+
   //   };
   //   fechDetailPost();
   // }, []);
- 
+
   return (
     <>
       <Header />
@@ -71,19 +70,21 @@ const Detail = ( { data } ) => {
 
 export default Detail;
 
+export const getServerSideProps = async (context) => {
+  const { slug } = context.query;
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+  const { data } = await axios.get(
+    `http://localhost:8000/api/listings/${slug}`,
+    config
+  );
 
-export const getServerSideProps = async (context)=> {
- 
-  const { slug } = context.query
-    const config = {
-      headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}`,
-      },
-    };
-  const { data } = await axios.get(`http://localhost:8000/api/listings/${slug}`, config);
-  
-  return { props: {
-        data
-      } 
-    }
-}
+  return {
+    props: {
+      data,
+    },
+  };
+};

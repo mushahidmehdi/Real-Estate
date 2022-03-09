@@ -1,7 +1,7 @@
-import Filter from "../src/components/Filter";
-import Footer from "../src/components/Footer";
-import Gallery from "../src/components/Gallery";
-import Header from "../src/components/Header";
+import Filter from "../components/Filter";
+import Footer from "../components/Footer";
+import Gallery from "../components/Gallery";
+import Header from "../components/Header";
 
 const Search = () => {
   return (

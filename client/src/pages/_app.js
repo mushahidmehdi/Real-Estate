@@ -1,9 +1,10 @@
 import "../sass/main.scss";
+
 import { Provider } from "react-redux";
-import { createWrapper } from "next-redux-wrapper";
-import store from "../src/state/store";
+import { useStore } from "../state/store";
 
 function MyApp({ Component, pageProps }) {
+  const store = useStore(pageProps.initialReduxState);
   return (
     <Provider store={store}>
       <Component {...pageProps} />
@@ -11,6 +12,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-const makeStore = () => store;
-const wrapper = createWrapper(makeStore);
-export default wrapper.withRedux(MyApp);
+export default MyApp;

@@ -1,7 +1,7 @@
 import React from "react";
-import SignUp from "../src/components/SignUp";
-import Header from "../src/components/Header";
-import Alert from "../src/components/Alert";
+import SignUp from "../components/SignUp";
+import Header from "../components/Header";
+import Alert from "../components/Alert";
 
 const signup = () => {
   return (

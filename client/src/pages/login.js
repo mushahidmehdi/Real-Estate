@@ -1,7 +1,7 @@
 import React from "react";
-import Alert from "../src/components/Alert";
-import Login from "../src/components/Login";
-import Header from "../src/components/Header";
+import Alert from "../components/Alert";
+import Login from "../components/Login";
+import Header from "../components/Header";
 
 const login = () => {
   return (
