@@ -3,6 +3,7 @@
 export const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,80}$/;
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
+export const NODE = process.env.NODE_ENV;
 
 export const bedroomsOptions = ["Any", "1+", "3+", "5+", "8+", "15+"];
 

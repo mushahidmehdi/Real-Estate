@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
 import Image from "next/image";
-import Header from "../components/Header";
+import Layout from "../hocs/Layout";
 import Carousel from "../components/Carousel";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -34,8 +33,7 @@ const Detail = ({ data }) => {
   // }, []);
 
   return (
-    <>
-      <Header />
+    <Layout>
       <div className="detail">
         <h1>Premium penthouse in central Barcelona with panoramic views</h1>
         <div className="detail__container">
@@ -64,27 +62,27 @@ const Detail = ({ data }) => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 
 export default Detail;
 
-export const getServerSideProps = async (context) => {
-  const { slug } = context.query;
-  const config = {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  };
-  const { data } = await axios.get(
-    `http://localhost:8000/api/listings/${slug}`,
-    config
-  );
+// export const getServerSideProps = async (context) => {
+//   const { slug } = context.query;
+//   const config = {
+//     headers: {
+//       Authorization: `Bearer ${localStorage.getItem("token")}`,
+//     },
+//   };
+//   const { data } = await axios.get(
+//     `http://localhost:8000/api/listings/${slug}`,
+//     config
+//   );
 
-  return {
-    props: {
-      data,
-    },
-  };
-};
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// };

@@ -1,12 +1,11 @@
 import Filter from "../components/Filter";
 import Footer from "../components/Footer";
 import Gallery from "../components/Gallery";
-import Header from "../components/Header";
+import Layout from "../hocs/Layout";
 
 const Search = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <div className="search__page">
         <div className="search__page-title">
           <h1>Search for an offer</h1>
@@ -19,7 +18,7 @@ const Search = () => {
           <Footer />
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

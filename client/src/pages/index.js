@@ -1,14 +1,14 @@
-import Header from "../components/Header";
+import Layout from "../hocs/Layout";
 import Main from "../components/Main";
-import Alert from "../components/Alert";
 
 const Home = () => {
   return (
-    <>
-      <Header />
+    <Layout
+      title="Django Next Application"
+      content="Home Page for Real Estate primary using Django and Next."
+    >
       <Main />
-      <Alert />
-    </>
+    </Layout>
   );
 };
 

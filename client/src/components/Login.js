@@ -18,12 +18,13 @@ const Login = () => {
   const handleOnChange = (e) => {
     setLoginAccount({ ...loginAccount, [e.target.name]: e.target.value });
   };
+
   const submit = (e) => {
     e.preventDefault();
     dispatch(login(email, password));
   };
 
-  if (isAuthenticated) {
+  if (typeof window !== "undefined" && isAuthenticated) {
     router.push("/");
   }
 

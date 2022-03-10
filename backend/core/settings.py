@@ -1,3 +1,5 @@
+
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,8 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     'rest_framework',
+    'corsheaders',
+    'djoser',
     'rest_framework_simplejwt',
     'accounts',
     'realtors',
@@ -50,7 +53,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,14 +144,52 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 3
 }
 
-CORS_ORIGIN_ALLOW_ALL = True
+
+DJOSER = {
+    'LOGIN_FIELD': 'email',
+    'SEND_ACTIVATION_EMAIL': True,
+    'SEND_CONFIRMATION_EMAIL': True,
+    'USER_CREATE_PASSWORD_RETYPE': True,
+    
+    'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
+    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
+
+    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+    'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': '/activate/{uid}/{token}',
+
+    'SERIALIZERS': {
+        'user_create': 'accounts.api.serializers.UserSerializer',
+        'user': 'accounts.api.serializers.UserSerializer',
+        'user_delete': 'djoser.serializers.UserDeleteSerializer',
+    },
+}
+
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('JWT',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'BLACKLIST_AFTER_ROTATION': False,
+
+}
+
+
+# Allowed Hosts
+# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ORIGINS = [
+    'http://localhost:3000',
+]
+
+# File Upload Size
 FILE_UPLOAD_PERMISSIONS = 0o640
 
+# Customer User Model 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 # Email Settings
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587

@@ -1,12 +1,11 @@
-import React from "react";
 import SignUp from "../components/SignUp";
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import Alert from "../components/Alert";
 
 const signup = () => {
   return (
     <div className="signup__page">
-      <Header />
+      <Navbar />
       <SignUp />
       <Alert />
     </div>

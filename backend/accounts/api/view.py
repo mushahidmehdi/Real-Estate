@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from django.contrib.auth import get_user_model
 from rest_framework.response import Response
 from rest_framework import permissions, status
-from .serializers import UserSerializer;
+# from .serializers import UserSerializer;
 
 User = get_user_model()
 
@@ -14,13 +14,13 @@ class SignUpView(APIView):
 
     def post(self, request, format=None):
         try:
-            data = request.data
+            data = self.request.data
             email = data['email']
             name = data['name']
             password = data['password']
-            confirm_password = data['confirm_password']
+            re_password = data['re_password']
 
-            if password == confirm_password:
+            if password == re_password:
                 if len(password) < 8:
                     return Response(
                         {'error': 'Password must be 8 character long'},
@@ -34,7 +34,7 @@ class SignUpView(APIView):
                         user = User.objects.create_user(
                             email=email, name=name, password=password)
                         user.save()
-                        if User.object.filter(email=email).exists():
+                        if User.objects.filter(email=email).exists():
                             return Response({'success': 'New User created successfully'},status=status.HTTP_201_CREATED)
                         else:
                             return Response({'error': 'User creation fail'},
@@ -48,15 +48,15 @@ class SignUpView(APIView):
             )
 
 
-class LoadUserView(APIView):
-    def get(self, request, format=None):
+# class LoadUserView(APIView):
+#     def get(self, request, format=None):
 
-        try:
-            user = request.user
-            serialize = UserSerializer(user, many=True)
-            return Response({'user': serialize.data},
-            status=status.HTTP_200_OK) 
+#         try:
+#             user = request.user
+#             serialize = UserSerializer(user, many=True)
+#             return Response({'user': serialize.data},
+#             status=status.HTTP_200_OK) 
             
-        except:
-            return Response({'error': 'Error while retrieving user data'},
-            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+#         except:
+#             return Response({'error': 'Error while retrieving user data'},
+#             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
