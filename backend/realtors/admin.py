@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Realtors
+from .models import Realtor
 
 
-@admin.register(Realtors)
+@admin.register(Realtor)
 class RealtorAdmin(admin.ModelAdmin):
     display_list = ('id', 'name', 'email', 'phone',)
     display_list_links = ('id', 'name',)

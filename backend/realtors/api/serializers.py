@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from realtors.models import Realtors
+from realtors.models import Realtor
 
 
 class RealtorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Realtors
+        model = Realtor
         fields = '__all__'

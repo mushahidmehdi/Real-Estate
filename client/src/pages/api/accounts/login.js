@@ -44,7 +44,7 @@ export default async (req, res) => {
         .json({ error: "Something went wrong while authenticating" });
     }
   } else {
-    req.headers("Allow", ["POST"]);
+    res.setHeader("Allow", ["POST"]);
     return res.status(405).json({
       error: `method ${req.method} is not allowed`,
     });

@@ -114,18 +114,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'build/static',
-# ]
-
-STATIC_ROOT = 'static'
-
-MEDIA_ROOT = 'media'
-MEDIA_URL = 'media/'
 
 
 # Default primary key field type
@@ -142,6 +131,16 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 3
+}
+
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('JWT',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'BLACKLIST_AFTER_ROTATION': False,
+
 }
 
 
@@ -165,20 +164,11 @@ DJOSER = {
     },
 }
 
-SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('JWT',),
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
-    'BLACKLIST_AFTER_ROTATION': False,
-
-}
-
 
 # Allowed Hosts
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_ORIGINS = [
+    'http://127.0.0.1:3000',
     'http://localhost:3000',
 ]
 
@@ -194,5 +184,21 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'mushahidmehdi0@gmail.com'
-EMAIL_HOST_PASSWORD = 'zmgvbwmxrjqpfepg'
+EMAIL_HOST_PASSWORD = 'hmxvnvgmknxzvhob'
 EMAIL_USE_TLS = True
+
+# media files 
+
+MEDIA_ROOT = 'media'
+MEDIA_URL = 'media/'
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+
+STATIC_URL = 'static/'
+STATIC_ROOT = 'static'
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'build/static',
+# ]
+

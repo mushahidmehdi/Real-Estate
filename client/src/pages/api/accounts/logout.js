@@ -1,9 +1,9 @@
-import { API_URL } from "../../../config";
+import { NODE } from "../../../config";
 import cookie from "cookie";
 
 export default async (req, res) => {
   if (req.method === "POST") {
-    req.setHeaders("Set-Cookie", [
+    res.setHeader("Set-Cookie", [
       cookie.serialize("access", "", {
         httpOnly: true,
         secure: NODE !== "development",
@@ -19,11 +19,11 @@ export default async (req, res) => {
         path: "/api/",
       }),
     ]);
-    return req.status(200).json({
+    return res.status(200).json({
       success: "User logout successfully",
     });
   } else {
-    req.setHeaders("Allow", ["POST"]);
+    res.setHeader("Allow", ["POST"]);
     return res.status(405).json({
       error: `Method ${res.method} is not allowed`,
     });

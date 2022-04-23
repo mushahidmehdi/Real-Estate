@@ -1,9 +1,11 @@
 import Image from "next/image";
 import logo from "../../public/assests/logo/Vector.svg";
 import { logout } from "../state/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
+  const authenticated = useSelector((state) => state.auth.isAuthenticated);
+  console.log(authenticated);
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());

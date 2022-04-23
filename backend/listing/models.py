@@ -1,10 +1,10 @@
 from django.db import models
-from realtors.models import Realtors
+from realtors.models import Realtor
 from django.utils.timezone import now
 
 
 class Listing(models.Model):
-    realtors = models.ForeignKey(Realtors, on_delete=models.DO_NOTHING)
+    realtors = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     slug = models.SlugField(max_length=300, unique=True)

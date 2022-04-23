@@ -102,6 +102,7 @@ export const signup =
 export const logout = () => async (dispatch) => {
   try {
     const apiRes = await fetch("/api/accounts/logout", {
+      method: "POST",
       headers: { Accept: "application/json" },
     });
     if (apiRes.status === 200) {
