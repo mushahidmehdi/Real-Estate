@@ -7,7 +7,7 @@ const Home = () => {
       title="Django Next Application"
       content="Home Page for Real Estate primary using Django and Next."
     >
-      <Main />
+      {/* <Main /> */}
     </Layout>
   );
 };

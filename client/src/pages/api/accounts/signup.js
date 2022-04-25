@@ -28,6 +28,6 @@ export default async (req, res) => {
     res.setHeader("Allow", ["POST"]);
     return res
       .status(405)
-      .json({ error: `Method ${res.status} is not allowed` });
+      .json({ error: `Method ${req.status} is not allowed` });
   }
 };

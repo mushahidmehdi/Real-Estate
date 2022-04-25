@@ -45,9 +45,9 @@ const SignUp = () => {
   };
 
   if (typeof window !== "undefined" && isAuthenticated) {
-    router.push("/login");
+    router.push("/");
   }
-  if (signup_success) {
+  if (typeof window !== "undefined" && signup_success) {
     router.push("/login");
   }
 

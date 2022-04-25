@@ -18,3 +18,11 @@ export const SIGNUP_FAIL = "SIGNUP_FAIL";
 // Logout Type
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_FAIL = "LOGOUT_FAIL";
+
+// load user
+export const LOAD_USER_SUCCESS = "LOAD_USER_SUCCESS";
+export const LOAD_USER_FAIL = "LOAD_USER_FAIL";
+
+// isAuthenticated
+export const AUTHENTICATED_SUCCESS = "AUTHENTICATED_SUCCESS";
+export const AUTHENTICATED_FAIL = "AUTHENTICATED_FAIL";

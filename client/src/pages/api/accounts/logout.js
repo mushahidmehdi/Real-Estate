@@ -25,7 +25,7 @@ export default async (req, res) => {
   } else {
     res.setHeader("Allow", ["POST"]);
     return res.status(405).json({
-      error: `Method ${res.method} is not allowed`,
+      error: `Method ${req.method} is not allowed`,
     });
   }
 };

@@ -2,7 +2,6 @@
 
 .main__container {
   @include var.center;
-  @include var.container;
 }
 
 .main__body {
@@ -51,22 +50,22 @@
   }
 
   &-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  border-radius: 0.4rem;
-  padding: 1.49rem 2.5rem;
-  color: var.$primary-white;
-  background: var.$secondary-blue;
-  font-family: var.$font-sans;
-  > button {
-    border-style: none;
-    font-size: 1.8rem;
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 0.4rem;
+    padding: 1.49rem 2.5rem;
     color: var.$primary-white;
     background: var.$secondary-blue;
     font-family: var.$font-sans;
-    margin-inline-start: 1rem;
+    > button {
+      border-style: none;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var.$primary-white;
+      background: var.$secondary-blue;
+      font-family: var.$font-sans;
+      margin-inline-start: 1rem;
     }
-  } 
+  }
 }
