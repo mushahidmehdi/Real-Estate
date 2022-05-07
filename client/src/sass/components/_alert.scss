@@ -1,11 +1,10 @@
-@use "../abstracts" as abs;
+@use '../abstracts' as abs;
 
 .alert {
   font-size: 1.2rem;
   position: absolute;
   bottom: 0%;
   left: 0%;
-  background-color: abs.$primary-white;
   padding: 2rem;
   border-radius: 0.4rem;
 

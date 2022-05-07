@@ -1,4 +1,4 @@
-@use "../abstracts" as abs;
+@use '../abstracts' as abs;
 
 .gallery {
   display: flex;
@@ -22,10 +22,8 @@
     width: 132px;
     border-radius: 4px;
     padding: 13px, 24px, 13px, 24px;
-    border: 2px solid abs.$secondary-blue;
     background-color: transparent;
     font-family: abs.$font-sans;
-    color: abs.$secondary-blue;
     font-size: 1.6rem;
     font-weight: 600;
   }

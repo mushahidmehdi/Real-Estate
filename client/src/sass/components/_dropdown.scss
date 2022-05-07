@@ -1,4 +1,4 @@
-@use "../abstracts" as abs;
+@use '../abstracts' as abs;
 
 .dropdown {
   &_btn {
@@ -11,8 +11,8 @@
     align-items: center;
     height: 36px;
     width: 222px;
-    background-color: abs.$secondary-white;
-  
+    background-color: abs.$white-clr;
+
     > span {
       padding: 0 0 0 1rem;
       font-family: abs.$font-sans;
@@ -30,7 +30,6 @@
 
   &_content {
     position: absolute;
-    background: abs.$secondary-white;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     z-index: 1;
   }
@@ -51,12 +50,11 @@
     line-height: 27px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     }
     &::selection {
       background-color: white;
     }
   }
 }
-
-

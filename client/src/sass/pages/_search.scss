@@ -1,4 +1,4 @@
-@use "../abstracts" as abs;
+@use '../abstracts' as abs;
 
 .search__page {
   @include abs.center;
@@ -24,7 +24,4 @@
     letter-spacing: 0px;
     text-align: center;
   }
-}
-
-.search__page_filter-settings {
 }

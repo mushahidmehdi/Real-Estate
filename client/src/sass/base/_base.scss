@@ -1,5 +1,5 @@
-@use "../abstracts/variables" as var;
-@use "../abstracts/mixins" as mix;
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
 
 *,
 *::after,
@@ -36,5 +36,5 @@ p {
 }
 
 ::selection {
-  background: var.$quarterly-blue;
+  background: var.$light-blue-clr;
 }

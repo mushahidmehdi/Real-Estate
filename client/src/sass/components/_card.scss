@@ -1,4 +1,4 @@
-@use "../abstracts" as abs;
+@use '../abstracts' as abs;
 
 .card {
   width: 31rem;
@@ -27,7 +27,7 @@
       font-style: normal;
       font-weight: 700;
       line-height: 2.3rem;
-      color: abs.$secondary-blue;
+      color: abs.$blue-clr;
     }
     > p {
       font-family: abs.$font-sans;

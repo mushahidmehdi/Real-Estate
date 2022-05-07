@@ -1,8 +1,7 @@
-@use "../abstracts" as abs;
+@use '../abstracts' as abs;
 
 .filter__container {
   margin-top: 7rem;
-  background: abs.$primary-white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +14,6 @@
   height: 104px;
   width: 516px;
   border-radius: 4px;
-  background: abs.$primary-white;
   margin: 4rem 0 0 0;
 
   > input {
@@ -29,7 +27,7 @@
   > input:focus {
     outline: none;
   }
-  
+
   &-btn {
     display: flex;
     align-items: center;
@@ -37,17 +35,13 @@
     border-top-right-radius: 0.4rem;
     border-bottom-right-radius: 0.4rem;
     padding: 1.59rem 2.5rem;
-    color: abs.$primary-white;
-    background: abs.$secondary-blue;
     font-family: abs.$font-sans;
-  > button {
-    border-style: none;
-    font-size: 1.7rem;
-    font-weight: 400;
-    color: abs.$primary-white;
-    background: abs.$secondary-blue;
-    font-family: abs.$font-sans;
-    margin-inline-start: 1rem;
+    > button {
+      border-style: none;
+      font-size: 1.7rem;
+      font-weight: 400;
+      font-family: abs.$font-sans;
+      margin-inline-start: 1rem;
     }
   }
 }
@@ -62,7 +56,6 @@
   color: rgb(146, 146, 146);
   > span {
     font-size: 1.6rem;
-    background: abs.$primary-white;
     padding: 0 19px;
     font-style: normal;
     font-weight: 400;

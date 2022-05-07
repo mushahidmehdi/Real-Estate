@@ -1,4 +1,4 @@
-@use "../abstracts" as abs;
+@use '../abstracts' as abs;
 
 .footer {
   margin-top: 15rem;
@@ -11,12 +11,7 @@
     transform: translate(-50%, -50%);
     z-index: 1;
 
-    > Image {
-      background: abs.$secondary-white;
-    }
-
     > h3 {
-      color: abs.$secondary-white;
       font-size: 1.7rem;
       margin-left: -4.9rem;
     }

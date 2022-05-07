@@ -1,4 +1,4 @@
-@use "../abstracts" as abs;
+@use '../abstracts' as abs;
 
 .login {
   @include abs.center;
@@ -7,7 +7,6 @@
     width: 32rem;
     height: 30rem;
     padding: 2rem 0.9rem;
-    background-color: abs.$primary-white;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -44,8 +43,6 @@
         border-style: none;
         font-size: 1.4rem;
         font-weight: 700;
-        color: abs.$primary-white;
-        background: abs.$secondary-blue;
         font-family: abs.$font-sans;
       }
     }

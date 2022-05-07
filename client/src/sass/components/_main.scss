@@ -1,4 +1,4 @@
-@use "../abstracts" as var;
+@use '../abstracts' as var;
 
 .main__container {
   @include var.center;
@@ -34,7 +34,6 @@
   height: 104px;
   width: 516px;
   border-radius: 4px;
-  background: var.$primary-white;
   margin: 4rem 0 0 0;
 
   > input {
@@ -55,15 +54,11 @@
     justify-content: space-evenly;
     border-radius: 0.4rem;
     padding: 1.49rem 2.5rem;
-    color: var.$primary-white;
-    background: var.$secondary-blue;
     font-family: var.$font-sans;
     > button {
       border-style: none;
       font-size: 1.8rem;
       font-weight: 500;
-      color: var.$primary-white;
-      background: var.$secondary-blue;
       font-family: var.$font-sans;
       margin-inline-start: 1rem;
     }
