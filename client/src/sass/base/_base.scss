@@ -14,15 +14,18 @@ html {
 }
 
 body {
-  font-family: var.$font-merri;
+  font-family: var.$font-sans;
 }
 
 ul {
   list-style: none;
+  font-family: var.$font-sans;
+  font-size: 1.5rem;
 }
 
 a {
   color: var.$blue-clr;
+  font-family: var.$font-sans;
 }
 a:hover {
   color: var.$hover-blue-clr;
@@ -31,7 +34,9 @@ a:hover {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
   font-family: var.$font-merri;
 }
 
@@ -43,7 +48,25 @@ p {
   background: var.$light-blue-clr;
 }
 
-@media only screen and (max-width: 26.563em) {
+.inputField {
+  padding: 1.4rem 0;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  box-shadow: 0px 1px 5px 0px #0000001a inset;
+  background: #fff;
+  text-indent: 0.89rem;
+  outline: none;
+  font-size: 1.6rem;
+
+  &:active,
+  &:focus {
+    border: 1px solid var.$blue-clr;
+  }
+}
+
+@include mix.query(phone) {
   h1 {
     font-size: 3.6rem;
     line-height: 4.39rem;
@@ -56,17 +79,50 @@ p {
     font-size: 2.8rem;
     line-height: 3.72rem;
   }
+  h4 {
+    font-size: 2.4rem;
+    line-height: 3.19rem;
+  }
+  h5 {
+    font-size: 2.1rem;
+    line-height: 2.7rem;
+  }
+
   p {
     font-size: 1.6rem;
     line-height: 2.4rem;
   }
-  .subheadline {
-    font-size: 21.25rem;
-    line-height: 28.3rem;
+
+  .btn-trans-bg {
+    font-family: var.$font-sans;
+    background-color: transparent;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    padding: 0.9rem 2rem;
+    border-radius: 0.4rem;
+    border: 2px solid var.$blue-clr;
+    &:hover {
+      border: 2px solid var.$hover-blue-clr;
+    }
+  }
+
+  .btn-blue-bg {
+    font-family: var.$font-sans;
+    padding: 0.8rem 2.6rem;
+    border-style: none;
+    background-color: var.$blue-clr;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: white;
+    padding: 1.2rem 2rem;
+    border-radius: 0.4rem;
+    &:hover {
+      background-color: var.$hover-blue-clr;
+    }
   }
 }
 
-@media only screen and (min-width: 25.563em) and (max-width: 48em) {
+@include mix.query(tablet) {
   h1 {
     font-size: 5.188rem;
     line-height: 6.9rem;
@@ -79,18 +135,110 @@ p {
     font-size: 3.3203rem;
     line-height: 4.42rem;
   }
+  h4 {
+    font-size: 2.6rem;
+    line-height: 3.5rem;
+  }
+  h5 {
+    font-size: 2.15rem;
+    line-height: 2.8rem;
+  }
   p {
     font-size: 1.7rem;
     line-height: 2.55rem;
   }
 
-  .subheadline {
-    font-size: 21.25rem;
-    line-height: 2.83rem;
+  .btn-blue-bg {
+    cursor: pointer;
+    border-style: none;
+    font-family: var.$font-sans;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    background-color: var.$blue-clr;
+    padding: 1.2rem 2.4rem;
+    color: white;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    &:hover {
+      background-color: var.$hover-blue-clr;
+    }
+  }
+
+  .btn-trans-bg {
+    cursor: pointer;
+    border: 2px solid var.$blue-clr;
+    font-family: var.$font-sans;
+    font-weight: 500;
+    font-size: 1.6rem;
+    background-color: transparent;
+    line-height: 2rem;
+    border-radius: 0.4rem;
+    padding: 1rem 3rem;
+    &:hover {
+      border: 2px solid var.$hover-blue-clr;
+    }
   }
 }
 
-@media only screen and (min-width: 48em) {
+@include mix.query(noteBook) {
+  h1 {
+    font-size: 5.188rem;
+    line-height: 6.9rem;
+  }
+  h2 {
+    font-size: 4.15rem;
+    line-height: 5.52rem;
+  }
+  h3 {
+    font-size: 3.3203rem;
+    line-height: 4.42rem;
+  }
+  h4 {
+    font-size: 2.6rem;
+    line-height: 3.5rem;
+  }
+  h5 {
+    font-size: 2.15rem;
+    line-height: 2.8rem;
+  }
+  p {
+    font-size: 1.7rem;
+    line-height: 2.55rem;
+  }
+
+  .btn-blue-bg {
+    cursor: pointer;
+    border-style: none;
+    font-family: var.$font-sans;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    background-color: var.$blue-clr;
+    padding: 1.2rem 2.4rem;
+    color: white;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    &:hover {
+      background-color: var.$hover-blue-clr;
+    }
+  }
+
+  .btn-trans-bg {
+    cursor: pointer;
+    border: 2px solid var.$blue-clr;
+    font-family: var.$font-sans;
+    font-weight: 500;
+    font-size: 1.6rem;
+    background-color: transparent;
+    line-height: 2rem;
+    border-radius: 0.4rem;
+    padding: 1rem 3rem;
+    &:hover {
+      border: 2px solid var.$hover-blue-clr;
+    }
+  }
+}
+
+@include mix.query(dektop) {
   h1 {
     font-size: 6.485rem;
     line-height: 8.63rem;
@@ -103,12 +251,47 @@ p {
     font-size: 4.15rem;
     line-height: 5.52rem;
   }
+  h4 {
+    font-size: 3.3rem;
+    line-height: 4.4rem;
+  }
+  h5 {
+    font-size: 2.6rem;
+    line-height: 3.53rem;
+  }
   p {
     font-size: 1.7rem;
     line-height: 2.55rem;
   }
-  .subheadline {
-    font-size: 2.125rem;
-    line-height: 2.83rem;
+
+  .btn-blue-bg {
+    cursor: pointer;
+    border-style: none;
+    font-family: var.$font-sans;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    background-color: var.$blue-clr;
+    padding: 1.2rem 3.4rem;
+    color: white;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    &:hover {
+      background-color: var.$hover-blue-clr;
+    }
+  }
+
+  .btn-trans-bg {
+    cursor: pointer;
+    border: 2px solid var.$blue-clr;
+    font-family: var.$font-sans;
+    font-weight: 500;
+    font-size: 1.6rem;
+    background-color: transparent;
+    line-height: 2rem;
+    border-radius: 0.4rem;
+    padding: 0.9rem 3.4rem;
+    &:hover {
+      border: 2px solid var.$hover-blue-clr;
+    }
   }
 }

@@ -1,66 +1,101 @@
 @use '../abstracts' as var;
 
-.main__container {
+.main {
+  max-width: 144rem;
+  margin: min(4rem, 30vw) auto 0;
+  padding: 0 5rem;
   @include var.center;
-}
 
-.main__body {
-  padding: 12rem 4rem;
-  flex: 3;
-
-  > h1 {
-    font-family: var.$font-merri;
-    font-size: 65px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 8.6rem;
-    letter-spacing: 0px;
-  }
-  > p {
-    font-family: var.$font-sans;
-    font-size: 2.1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 3.4rem;
-    letter-spacing: 0px;
-  }
-}
-
-.main__body-search {
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 104px;
-  width: 516px;
-  border-radius: 4px;
-  margin: 4rem 0 0 0;
-
-  > input {
-    font-family: var.$font-sans;
-    font-weight: 400;
-    font-size: 1.7rem;
-    padding: 1.7rem 2.5rem;
-    width: 260px;
-    border-style: none;
-  }
-  > input:focus {
-    outline: none;
+  &__image {
+    z-index: -1;
   }
 
-  &-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 0.4rem;
-    padding: 1.49rem 2.5rem;
-    font-family: var.$font-sans;
-    > button {
-      border-style: none;
-      font-size: 1.8rem;
-      font-weight: 500;
+  &__body {
+    h1 {
+      overflow-wrap: break-word;
+      inline-size: auto;
+    }
+    > p {
       font-family: var.$font-sans;
-      margin-inline-start: 1rem;
+      font-size: min(10vw, 2.1rem);
+      font-weight: 400;
+      line-height: 3.4rem;
+      overflow-wrap: break-word;
+    }
+
+    &-search {
+      padding: 1.5rem 2.5rem;
+      background-color: var.$light-blue-clr;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 4px;
+      margin: 4rem 0 4rem;
+      max-width: 38rem;
+      flex: 1;
+
+      &-btn {
+        box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+        padding: 0.5rem 1rem;
+        max-width: 13rem;
+        border-radius: 4px;
+        background-color: var.$blue-clr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        > button {
+          background-color: var.$blue-clr;
+          border: none;
+          color: #fff;
+          padding: 1rem;
+          font-size: 1.6rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+  @include var.query(phone) {
+    flex-direction: column;
+    &__body {
+      &-search {
+        // order: -1;
+        justify-content: center;
+        &-btn {
+          background-color: var.$blue-clr;
+          padding: 1.16rem 1rem;
+          flex: 1;
+          align-self: center;
+          justify-content: center;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+
+          > button {
+            display: none;
+          }
+        }
+        > input {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+  }
+
+  @include var.query(noteBook) {
+    flex-direction: column;
+  }
+  @include var.query(tablet) {
+    &__body {
+      max-width: 38rem;
+      padding-top: 10rem;
+      margin: 0 2rem 0 0;
+    }
+  }
+  @include var.query(destop) {
+    &__body {
+      max-width: 53rem;
+      padding-top: 10rem;
     }
   }
 }

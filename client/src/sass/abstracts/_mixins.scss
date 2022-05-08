@@ -4,17 +4,21 @@
   justify-content: center;
 }
 
-@mixin respond($bp) {
+@mixin query($bp) {
   @if $bp == phone {
-    @media only screen and (min-width: 31.5625em) {
+    @media only screen and (max-width: 26.499em) {
+      @content;
+    }
+  } @else if $bp == noteBook {
+    @media only screen and (min-width: 26.5em) and (max-width: 45.749em) {
       @content;
     }
   } @else if $bp == tablet {
-    @media only screen and (min-width: 85.375em) {
+    @media only screen and (min-width: 45.75em) and (max-width: 63.99999em) {
       @content;
     }
-  } @else if $bp == desktop {
-    @media only screen and (min-width: 120em) {
+  } @else {
+    @media only screen and (min-width: 64em) {
       @content;
     }
   }

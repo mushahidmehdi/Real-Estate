@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Card from "./Card";
-import axios from "axios";
-import { useRouter } from "next/router";
+import React, { useState, useEffect } from 'react';
+import Card from './Card';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function Gallery() {
   const [showMore, setShowMore] = useState(12);
@@ -20,7 +20,7 @@ function Gallery() {
       setLoading(!loading);
       const {
         data: { results },
-      } = await axios("http://localhost:8000/api/listings/");
+      } = await axios('http://localhost:8000/api/listings/');
       setLoading(!loading);
       setGalleryList(results);
     };
@@ -28,8 +28,8 @@ function Gallery() {
   }, []);
 
   return (
-    <div className="gallery">
-      <div className="gallery__body">
+    <div className='gallery'>
+      <div className='gallery__body'>
         {galleryList
           .slice(0, showMore)
           .map(
@@ -66,7 +66,9 @@ function Gallery() {
             )
           )}
       </div>
-      <button onClick={showMoreItems}>Show More</button>
+      <button className='btn-blue-bg' onClick={showMoreItems}>
+        Show More
+      </button>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = () => {
   const route = useRouter();
-  const [openMenu, setOpenMenu] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const { isAuthenticated, user } = useSelector((state) => state.auth);
 
@@ -24,44 +24,48 @@ const Navbar = () => {
       <div className='header__logo'>
         <Image src={logo} objectFit='contain' />
       </div>
-      <div className='header__nav'>
-        {/* <div className='header__nav-hamburger'>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div> */}
-        {openMenu ? (
-          <div>
-            <h1>Company Name</h1>
-            <ul className='header__nav-links'>
-              <li>Top Offer</li>
-              <li>Search in offer</li>
-              <li>Reference</li>
-              <li>About Us</li>
-              <li>Our Team</li>
-            </ul>
-            {isAuthenticated && user ? (
-              <div>
-                <button className='header__nav-btn' onClick={handleLogout}>
-                  Logout
-                </button>
-              </div>
-            ) : (
-              <div className='header__nav-btns'>
-                <button onClick={() => route.push('/login')}>Login</button>
-                <button onClick={() => route.push('/signup')}>SignUp</button>
-              </div>
-            )}
-          </div>
-        ) : (
-          ''
-        )}
-
-        {/* <nav>
-          <NavLinks />
-        </nav> */}
+      <div
+        className={`header__hamburger header__hamburger-${openMenu}`}
+        onClick={() => setOpenMenu(!openMenu)}
+      >
+        <span className='line'></span>
+        <span className='line'></span>
+        <span className='line'></span>
       </div>
+      <nav className={`header__nav header__nav-${openMenu}`}>
+        <div className='header__nav-sidebar'>
+          <h4>Company Name</h4>
+          <ul className='header__nav-links'>
+            <li>Top Offer</li>
+            <li>Search in offer</li>
+            <li>Reference</li>
+            <li>About Us</li>
+            <li>Our Team</li>
+          </ul>
+          {isAuthenticated && user ? (
+            <div className='header__nav-btns'>
+              <button className='btn-blue-bg' onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className='header__nav-btns'>
+              <button
+                className='btn-trans-bg'
+                onClick={() => route.push('/login')}
+              >
+                Login
+              </button>
+              <button
+                className='btn-blue-bg'
+                onClick={() => route.push('/signup')}
+              >
+                SignUp
+              </button>
+            </div>
+          )}
+        </div>
+      </nav>
     </main>
   );
 };
