@@ -8,7 +8,7 @@
   padding: 1rem;
 
   &__hamburger {
-    z-index: 99;
+    z-index: 999;
     @include var.center;
     position: relative;
     width: 60px;
@@ -18,7 +18,7 @@
       margin: 8px auto;
       position: absolute;
       display: block;
-      height: 4px;
+      height: 3px;
       border-radius: 90px;
       background-color: var.$dark-blue-clr;
       -webkit-transition: all 0.5s ease-in-out;
@@ -28,17 +28,17 @@
 
     span:nth-of-type(1) {
       top: 10px;
-      width: 35px;
+      width: 30px;
     }
 
     span:nth-of-type(2) {
       top: 20px;
-      width: 40px;
+      width: 35px;
     }
 
     span:nth-of-type(3) {
       top: 30px;
-      width: 35px;
+      width: 30px;
     }
 
     &:hover {
@@ -47,23 +47,23 @@
 
     &-true span:nth-child(1),
     &-true span:nth-child(3) {
-      width: 25px;
+      width: 18px;
     }
     &-true .line:nth-child(2) {
-      width: 43px;
+      width: 30px;
     }
     &-true .line:nth-child(1) {
       -webkit-transform: translateX(10px) rotate(45deg);
       -ms-transform: translateX(1px) rotate(40deg);
       -o-transform: translateX(1px) rotate(40deg);
-      transform: translate(15px, 3px) rotate(40deg);
+      transform: translate(9px, 5px) rotate(40deg);
     }
 
     &-true .line:nth-child(3) {
       -webkit-transform: translateX(10px) rotate(-40deg);
       -ms-transform: translateX(10px) rotate(-40deg);
       -o-transform: translateX(10px) rotate(-40deg);
-      transform: translate(15px, -3px) rotate(-40deg);
+      transform: translate(9px, -5px) rotate(-40deg);
     }
   }
 
@@ -112,6 +112,7 @@
       max-width: 5.6rem;
     }
     &__nav {
+      z-index: 99;
       transform: translate(100%);
       transition-duration: 1000ms;
       &-true {

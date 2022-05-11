@@ -23,6 +23,7 @@ function Gallery() {
       } = await axios('http://localhost:8000/api/listings/');
       setLoading(!loading);
       setGalleryList(results);
+      // console.log(data);
     };
     fechGallery();
   }, []);
@@ -66,7 +67,7 @@ function Gallery() {
             )
           )}
       </div>
-      <button className='btn-blue-bg' onClick={showMoreItems}>
+      <button className='btn-trans-bg' onClick={showMoreItems}>
         Show More
       </button>
     </div>

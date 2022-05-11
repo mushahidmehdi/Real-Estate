@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Card = ({
   title,
@@ -18,29 +18,21 @@ const Card = ({
 }) => {
   const router = useRouter();
   const numberWithComma = (num) => {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
-
-  const renderDetailPage = (slug) => {};
-
+  console.log(main_image);
   return (
     <div
-      className="card"
+      className='card'
       onClick={() => {
         router.push({
-          pathname: "/detail",
+          pathname: '/detail',
           query: { slug: slug },
         });
       }}
     >
-      <Image
-        width={350}
-        height={250}
-        src={
-          "https://c1.wallpaperflare.com/preview/120/272/942/luxury-home-upscale-architecture-design.jpg"
-        }
-      />
-      <div className="card__body">
+      <Image width={350} height={250} src={main_image} />
+      <div className='card__body'>
         <h1>{title.substr(0, 38)}</h1>
         <h3>Monthy Charge: ₺ {numberWithComma(rent_price)}</h3>
         <p>{description.substr(0, 74)} </p>

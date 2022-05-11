@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Link from "next/link";
-import { login } from "../state/actions";
-import { useRouter } from "next/router";
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Link from 'next/link';
+import { login } from '../state/actions';
+import { useRouter } from 'next/router';
 
 const Login = () => {
   const router = useRouter();
@@ -10,8 +10,8 @@ const Login = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   const [loginAccount, setLoginAccount] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const { email, password } = loginAccount;
@@ -25,49 +25,49 @@ const Login = () => {
     dispatch(login(email, password));
   };
 
-  if (typeof window !== "undefined" && isAuthenticated) {
-    router.push("/");
+  if (typeof window !== 'undefined' && isAuthenticated) {
+    router.push('/');
   }
 
   return (
-    <div className="login">
-      <div className="login__container">
+    <div className='login'>
+      <div className='login__container'>
         <h1>Login</h1>
         <form onSubmit={submit}>
-          <div className="login__container__item">
+          <div className='login__container__item'>
             <span>Email Address</span>
             <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
+              type='email'
+              name='email'
+              placeholder='Your Email'
               value={email}
               onChange={handleOnChange}
-              autoComplete="on"
+              autoComplete='on'
               required
             />
           </div>
-          <div className="login__container__item">
+          <div className='login__container__item'>
             <span>Password</span>
             <input
-              type="password"
-              name="password"
-              placeholder="New Password"
-              minLength="6"
-              autoComplete="on"
+              type='password'
+              name='password'
+              placeholder='New Password'
+              minLength='6'
+              autoComplete='on'
               value={password}
               onChange={handleOnChange}
               required
             />
           </div>
 
-          <div className="login__container__item">
-            <button>Login</button>
+          <div className='login__container__item'>
+            <button className='btn-blue-bg'>Login</button>
           </div>
         </form>
         <p>
-          Register a new account?{" "}
+          Register a new account?{' '}
           <span>
-            <Link href="/signup">SignUp</Link>
+            <Link href='/signup'>SignUp</Link>
           </span>
         </p>
       </div>

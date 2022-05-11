@@ -38,9 +38,9 @@ const Filter = () => {
           </div>
         </form>
 
-        <p className='filter__container-seprator'>
+        <label className='filter__container-seprator'>
           <span>Filter settings</span>
-        </p>
+        </label>
 
         <div className='filter__container-dropdown'>
           <Dropdown

@@ -1,8 +1,9 @@
 @use '../abstracts' as abs;
 
 .card {
-  width: 31rem;
-  height: 40.1rem;
+  cursor: pointer;
+  max-width: 31rem;
+  max-height: 40.1rem;
   border-radius: 0.5rem;
   border: 1px solid #f3f3fa;
   box-shadow: 0px 4px 20px 0px #4764c31a;
@@ -42,4 +43,8 @@
       font-size: 1.3rem;
     }
   }
+  // &:hover {
+  //   max-width: 34rem;
+  //   max-height: 44.1rem;
+  // }
 }

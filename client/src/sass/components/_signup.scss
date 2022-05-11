@@ -22,7 +22,8 @@
     }
   }
   &__container {
-    height: 54rem;
+    // height: 54rem;
+    background-color: abs.$light-blue-clr;
     font-size: 3rem;
     padding: 2.3rem 1.3rem;
     border-radius: 4px;
@@ -52,6 +53,8 @@
         > p {
           margin-inline-start: 0.5rem;
           color: rgb(251, 83, 83);
+          font-size: 1.3rem;
+          line-height: 1.5rem;
         }
       }
       &-offscreen {
@@ -92,7 +95,9 @@
       }
 
       > button {
+        background-color: abs.$blue-clr;
         border-radius: 0.4rem;
+        color: #fff;
         padding: 0.8rem 2.8rem;
         border-style: none;
         font-size: 1.5rem;

@@ -2,8 +2,9 @@
 
 .dropdown {
   &_btn {
+    z-index: 0;
     cursor: pointer;
-    position: relative;
+    // position: relative;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
       rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     display: flex;
@@ -29,26 +30,28 @@
   }
 
   &_content {
-    position: absolute;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    z-index: 1;
+    // position: absolute;
+    // position: relative;
+    // box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   }
 
   &_items {
     cursor: pointer;
-    position: relative;
+    // position: relative;
     padding: 0 0 0 1rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 32px;
     width: 212px;
-    font-family: abs.$font-sans;
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
     line-height: 27px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    font-family: abs.$font-sans;
+    background-color: #fff;
+    box-shadow: rgba(9, 1, 1, 0.4) 0px 1px 2px 0px;
+
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
         rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;

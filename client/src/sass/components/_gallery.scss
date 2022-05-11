@@ -3,19 +3,18 @@
 .gallery {
   display: flex;
   border: 2px dotted green;
-  max-width: 144rem;
+  max-width: 136rem;
   margin: 2rem auto;
-
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   &__body {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 2rem;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
   }
 }

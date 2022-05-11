@@ -4,8 +4,9 @@
   @include abs.center;
   margin-top: 20rem;
   &__container {
+    background-color: abs.$light-blue-clr;
     width: 32rem;
-    height: 30rem;
+
     padding: 2rem 0.9rem;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
